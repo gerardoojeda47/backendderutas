@@ -11,8 +11,14 @@ if (process.env.NODE_ENV === 'production') {
     username: process.env.DB_USER,
     password: process.env.DB_PASSWORD,
     host: process.env.DB_HOST,
-    dialect: 'mysql',
-    port: process.env.DB_PORT || 3306
+    dialect: 'postgres',
+    port: process.env.DB_PORT || 5432,
+    dialectOptions: {
+      ssl: {
+        require: true,
+        rejectUnauthorized: false
+      }
+    }
   };
 } else {
   // Configuración para desarrollo usando config.json
