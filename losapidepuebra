@@ -1,0 +1,101 @@
+POST http://localhost:3000/api/register/admin
+Content-Type: application/json
+
+{
+"nombre": "Admin Prueba",
+"email": "admin@test.com",
+"password": "123456"
+}
+
+###
+
+POST http://localhost:3000/api/register/usuario
+Content-Type: application/json
+
+{
+"nombre": "Usuario Prueba",
+"email": "usuario@test.com",
+"password": "123456"
+}
+
+###
+
+POST http://localhost:3000/api/register/gestion
+Content-Type: application/json
+Authorization: Bearer tu_token_admin
+
+{
+"nombre": "Conductor Prueba",
+"email": "conductor@test.com",
+"password": "123456",
+"rol": "conductor"
+}
+
+###
+
+POST http://localhost:3000/api/login/login
+Content-Type: application/json
+
+{
+"email": "usuario@test.com",
+"password": "123456"
+}
+
+###
+
+GET http://localhost:3000/api/usuarios
+
+###
+
+GET http://localhost:3000/api/rutas/listar
+
+###
+
+POST http://localhost:3000/api/rutas/crear
+Content-Type: application/json
+
+{
+"nombre": "Ruta 1",
+"descripcion": "Ruta de prueba"
+}
+
+###
+
+GET http://localhost:3000/api/paraderos/obtener
+
+###
+
+POST http://localhost:3000/api/paraderos/
+Content-Type: application/json
+
+{
+"nombre": "Paradero 1",
+"ubicacion": "Ubicación de prueba"
+}
+
+###
+
+GET http://localhost:3000/api/empresas/listar
+
+###
+
+POST http://localhost:3000/api/empresas/crear
+Content-Type: application/json
+
+{
+"nombre": "Empresa 1",
+"nit": "123456789"
+}
+
+###
+
+GET http://localhost:3000/api/roles/listar
+
+###
+
+POST http://localhost:3000/api/roles/crear
+Content-Type: application/json
+
+{
+"nombre": "rol_prueba"
+}
