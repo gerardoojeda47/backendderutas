@@ -127,10 +127,40 @@ NODE_ENV=development
 
 ## Despliegue en Render
 
-1. Conectar tu repositorio de GitHub a Render
-2. Configurar las variables de entorno en Render
-3. Usar el comando de build: `npm install`
-4. Comando de inicio: `npm start`
+### 1. Crear cuenta en Render
+- Ve a [render.com](https://render.com)
+- Crea una cuenta o inicia sesión
+
+### 2. Conectar repositorio
+- Haz clic en "New +" → "Web Service"
+- Conecta tu cuenta de GitHub
+- Selecciona el repositorio `gerardoojeda47/backendderutas`
+
+### 3. Configurar el servicio
+- **Name**: `sistema-gestion-rutas-backend`
+- **Environment**: `Node`
+- **Build Command**: `npm install`
+- **Start Command**: `npm start`
+
+### 4. Configurar variables de entorno
+En la sección "Environment Variables", agrega:
+
+```env
+NODE_ENV=production
+PORT=10000
+DB_HOST=tu_host_de_base_de_datos
+DB_USER=tu_usuario_de_base_de_datos
+DB_PASSWORD=tu_contraseña_de_base_de_datos
+DB_NAME=tu_nombre_de_base_de_datos
+DB_PORT=3306
+JWT_SECRET=tu_clave_secreta_muy_segura
+```
+
+### 5. Base de datos recomendada
+Para el despliegue, puedes usar:
+- **PlanetScale** (gratis): [planetscale.com](https://planetscale.com)
+- **Railway** (gratis): [railway.app](https://railway.app)
+- **Clever Cloud** (gratis): [clever-cloud.com](https://clever-cloud.com)
 
 ## Contribución
 
