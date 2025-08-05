@@ -2,28 +2,8 @@ const fs = require('fs');
 const path = require('path');
 const Sequelize = require('sequelize');
 
-// Configuración para diferentes entornos
-let config;
-if (process.env.NODE_ENV === 'production') {
-  // Configuración para producción usando variables de entorno
-  config = {
-    database: process.env.DB_NAME,
-    username: process.env.DB_USER,
-    password: process.env.DB_PASSWORD,
-    host: process.env.DB_HOST,
-    dialect: 'postgres',
-    port: process.env.DB_PORT || 5432,
-    dialectOptions: {
-      ssl: {
-        require: true,
-        rejectUnauthorized: false
-      }
-    }
-  };
-} else {
-  // Configuración para desarrollo usando config.json
-  config = require(__dirname + '/../config/config.json')['development'];
-}
+// Usar la nueva configuración
+const config = require(__dirname + '/../config/config.js')[process.env.NODE_ENV || 'development'];
 
 const db = {};
 
